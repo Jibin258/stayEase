@@ -28,6 +28,13 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.writing-mode-vertical-lr': { 'writing-mode': 'vertical-lr' },
+        '.writing-mode-vertical-rl': { 'writing-mode': 'vertical-rl' },
+      });
+    },
+  ],
 }
 

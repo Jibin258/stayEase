@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const navigation = [
     { name: 'Home', to: '/' },
     { name: 'About', to: '/about' },
-    { name: 'Our Properties', to: '/properties' },
+    { name: 'Properties', to: '/properties' },
     { name: 'Blog', to: '/blog' },
     { name: 'Contact', to: '/contact' },
 ]
@@ -24,14 +24,14 @@ export default function Navbar() {
     const handleScroll = useCallback(() => {
         const currentScrollPosition = window.pageYOffset
 
-        if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 90) {
+        if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 80) {
             setIsScrolledUp(false)
         } else if (currentScrollPosition < lastScrollPosition) {
             setIsScrolledUp(true)
         }
 
         setLastScrollPosition(currentScrollPosition)
-    },[lastScrollPosition])
+    }, [lastScrollPosition])
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
@@ -41,7 +41,7 @@ export default function Navbar() {
     }, [lastScrollPosition, handleScroll])
 
     return (
-        <Disclosure as="nav" className={`bg-[#6c757d] shadow fixed w-full top-0 z-[100] transition-opacity duration-300 ${isScrolledUp ? 'opacity-100' : 'opacity-0'}`}>
+        <Disclosure as="nav" className={`bg-[#000000] border-b-2 border-[#eba312] shadow fixed w-full top-0 z-[100] transition-opacity duration-300 ${isScrolledUp ? 'opacity-100' : 'opacity-0'}`}>
             <div className="h-24 p-2">
                 <div className="flex justify-around items-center">
                     {/* Logo */}
@@ -49,7 +49,8 @@ export default function Navbar() {
                         <img
                             alt="CompanyLogo"
                             src="assets/img/brand-logo/stayEase-Logo.webp"
-                            className="h-18 w-auto"
+                            className="h-18 w-auto object-cover"
+                            loading="lazy"
                         />
                     </div>
 
@@ -65,7 +66,7 @@ export default function Navbar() {
                                         to={item.to}
                                         aria-current={isActive ? 'page' : undefined}
                                         className={classNames(
-                                            isActive ? 'text-[0.9rem] lg:text-[1rem] text-amber-400' : 'text-[0.9rem] lg:text-[1rem] text-white hover:text-amber-400',
+                                            isActive ? 'text-[0.9rem] lg:text-[1rem] text-[#eba312]' : 'text-[0.9rem] lg:text-[1rem] text-white hover:text-[#eba312]',
                                             'rounded-md px-3 py-2 font-medium'
                                         )}
                                         onClick={() => window.scrollTo(0, 0)}
@@ -80,9 +81,9 @@ export default function Navbar() {
                     {/* Social Media */}
                     <div className='hidden md:block'>
                         <div className="flex space-x-8">
-                            <div><Link to="" title="Facebook"><i className="md:text-xl lg:text-2xl text-white hover:text-amber-400 fab fa-facebook-f" /></Link></div>
-                            <div><Link to="" title="Twitter"><i className="md:text-xl lg:text-2xl text-white hover:text-amber-400 fab fa-twitter" /></Link></div>
-                            <div><Link to="" title="Instagram"><i className="md:text-xl lg:text-2xl text-white hover:text-amber-400 fab fa-instagram" /></Link></div>
+                            <div><Link to="https://www.facebook.com/stayeasee?mibextid=ZbWKwL" target='_blank' title="Facebook"><i className="text-2xl text-white hover:text-[#eba312] fab fa-facebook-f" /></Link></div>
+                            <div><Link to="https://www.instagram.com/stayease_/" target='_blank' title="Instagram"><i className="text-2xl text-white hover:text-[#eba312] fab fa-instagram" /></Link></div>
+                            <div><Link to="https://www.linkedin.com/company/stayease/" target='_blank' title="LinkedIn"><i className="text-2xl text-white hover:text-[#eba312] fab fa-linkedin" /></Link></div>
                         </div>
                     </div>
 
@@ -110,7 +111,7 @@ export default function Navbar() {
                                 to={item.to}
                                 aria-current={isActive ? 'page' : undefined}
                                 className={classNames(
-                                    isActive ? 'text-[1rem] bg-[#282b38] text-amber-400' : 'text-white hover:bg-[#282b38] hover:text-amber-400',
+                                    isActive ? 'text-[1rem] bg-[#282b38] text-[#eba312]' : 'text-white hover:bg-[#282b38] hover:text-[#eba312]',
                                     'block rounded-md px-3 py-2 text-[1rem] font-medium'
                                 )}
                                 onClick={() => window.scrollTo(0, 0)}
@@ -120,11 +121,12 @@ export default function Navbar() {
                         )
                     })}
                 </div>
+                
                 <div className='md:hidden'>
                     <div className="flex flex justify-left space-x-8 px-8 pb-5 pt-5">
-                        <div><Link to="" title="Facebook"><i className="text-2xl text-white hover:text-amber-400 fab fa-facebook-f" /></Link></div>
-                        <div><Link to="" title="Twitter"><i className="text-2xl text-white hover:text-amber-400 fab fa-twitter" /></Link></div>
-                        <div><Link to="" title="Instagram"><i className="text-2xl text-white hover:text-amber-400 fab fa-instagram" /></Link></div>
+                        <div><Link to="https://www.facebook.com/stayeasee?mibextid=ZbWKwL" target='_blank' title="Facebook"><i className="text-2xl text-white hover:text-[#eba312] fab fa-facebook-f" /></Link></div>
+                        <div><Link to="https://www.instagram.com/stayease_/" target='_blank' title="Instagram"><i className="text-2xl text-white hover:text-[#eba312] fab fa-instagram" /></Link></div>
+                        <div><Link to="https://www.linkedin.com/company/stayease/" target='_blank' title="LinkedIn"><i className="text-2xl text-white hover:text-[#eba312] fab fa-linkedin" /></Link></div>
                     </div>
                 </div>
             </DisclosurePanel>

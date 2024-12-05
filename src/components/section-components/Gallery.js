@@ -1,49 +1,48 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useEffect, useRef, useMemo } from 'react'
 
 const Gallery = () => {
     let publicUrl = process.env.PUBLIC_URL + '/'
 
-    const [slideIndex, setSlideIndex] = useState(1)
-    const [isVisible, setIsVisible] = useState(false)
-    const ref = useRef()
+    const images = useMemo(
+        () => [
+            [
+                `${publicUrl}assets/img/gallery/common_area_img1.webp`,
+                `${publicUrl}assets/img/gallery/common_area_img2.webp`,
+                `${publicUrl}assets/img/gallery/common_area_img3.webp`,
+                `${publicUrl}assets/img/gallery/common_area_img4.webp`,
+            ],
+            [
+                `${publicUrl}assets/img/gallery/living_room_img1.webp`,
+                `${publicUrl}assets/img/gallery/living_room_img2.webp`,
+                `${publicUrl}assets/img/gallery/living_room_img3.webp`,
+                `${publicUrl}assets/img/gallery/living_room_img4.webp`,
+            ],
+            [
+                `${publicUrl}assets/img/gallery/kitchen_area_img1.webp`,
+                `${publicUrl}assets/img/gallery/kitchen_area_img2.webp`,
+                `${publicUrl}assets/img/gallery/kitchen_area_img3.webp`,
+                `${publicUrl}assets/img/gallery/kitchen_area_img4.webp`,
+            ],
+            [
+                `${publicUrl}assets/img/gallery/bedroom_img1.webp`,
+                `${publicUrl}assets/img/gallery/bedroom_img2.webp`,
+                `${publicUrl}assets/img/gallery/bedroom_img3.webp`,
+                `${publicUrl}assets/img/gallery/bedroom_img4.webp`,
+            ],
+        ],
+        [publicUrl]
+    )
 
-    const slides = [
-        { src: publicUrl + "assets/img/accomodations/accomodation_img1.jpg", alt: 'Single_Private', text: 'Single Private' },
-        { src: publicUrl + "assets/img/accomodations/accomodation_img2.jpg", alt: 'Private_With_Balcony', text: 'Private With Balcony' },
-        { src: publicUrl + "assets/img/accomodations/accomodation_img3.jpg", alt: 'Double_Sharing', text: 'Double Sharing' },
-        { src: publicUrl + "assets/img/accomodations/accomodation_img4.jpg", alt: 'Triple_Sharing', text: 'Triple Sharing' },
+    const descriptions = [
+        "Common Area",
+        "Living Room",
+        "Kitchen Area",
+        "Bedroom"
     ]
 
-    let touchStartX = 0
-    let touchEndX = 0
-
-    const handleTouchStart = (e) => {
-        touchStartX = e.targetTouches[0].clientX
-
-    }
-
-    const handleTouchMove = (e) => {
-        touchEndX = e.targetTouches[0].clientX
-
-    }
-
-    const handleTouchEnd = () => {
-        if (touchStartX - touchEndX > 50) {
-            plusSlides(1)
-        } else if (touchEndX - touchStartX > 50) {
-            plusSlides(-1)
-        }
-    }
-
-    const currentSlide = (index) => setSlideIndex(index)
-    const plusSlides = useCallback((n) => setSlideIndex((prev) => ((prev - 1 + n + slides.length) % slides.length) + 1), [slides.length])
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            plusSlides(1)
-        }, 3000)
-        return () => clearInterval(intervalId)
-    }, [plusSlides])
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const [isVisible, setIsVisible] = useState(false)
+    const ref = useRef()
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -61,68 +60,87 @@ const Gallery = () => {
         return () => observer.disconnect()
     }, [])
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+        }, 3000)
+
+        return () => clearInterval(interval)
+    }, [images.length])
+
+    const handleNext = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+    }
+
+    const handlePrev = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === 0 ? images.length - 1 : prevIndex - 1
+        )
+    }
+
+    const currentSlide = (index) => setCurrentIndex(index)
+
     return (
-        <section className='px-3 md:px-10 lg:px-24 pt-[5rem] lg:pt-[3rem] pb-[2rem] md:pb-[4rem] lg:pb-[5rem]'>
-            <div className="mb-5 md:mb-8 text-center">
-                <span className='rounded-full px-4 py-1 bg-yellow-100 text-amber-500'>Our Accommodations</span>
-                <h1 className="text-2xl md:text-3xl font-bold my-5">Gallery</h1>
+        <section className='px-3 md:px-10 lg:px-24 pt-[1rem] md:pt-[3rem] lg:pt-[3rem] pb-[2rem] md:pb-[4rem] lg:pb-[5rem]'>
+            <div className="mb-10 text-center">
+                <h1 className="text-2xl md:text-3xl font-semibold my-5">Our Gallery</h1>
             </div>
 
-            <div
-                className="relative w-full overflow-hidden group"
-                onTouchStart={handleTouchStart}
-                onTouchMove={handleTouchMove}
-                onTouchEnd={handleTouchEnd}
-            >
-                <div className="relative w-full h-[50vh] md:h-[75vh]">
-                    {slides.map((slide, index) => (
-                        <div
-                            key={index}
-                            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-700 ease-in-out ${slideIndex === index + 1 ? 'opacity-100' : 'opacity-0'}`}
-                        >
-                            <img
-                                src={slide.src}
-                                alt={slide.alt}
-                                className="w-full h-full object-cover"
-                            />
+            <div className="relative text-white pb-[3rem]">
+                {descriptions.map((description, index) => (
+                    <p key={index} className={`absolute text-xl transition-opacity duration-1000 opacity-${currentIndex === index ? '100' : '0'}`}>{description}</p>
+                ))}
+            </div>
 
-                            <div className="numbertext absolute top-0 left-0 text-white p-2 text-sm opacity-0 group-hover:opacity-90 transition-opacity duration-300">
-                                {index + 1} / {slides.length}
-                            </div>
-
-                            <div className="bg-[#282b38] rounded-md absolute top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white py-2 px-10 text-base opacity-80 transition-opacity duration-300">
-                                {slide.text}
-                            </div>
+            <div className="relative flex flex-col justify-center group">
+                <div className="h-[40vh] md:h-[80vh] lg:h-[45vh] xl:h-[50vh] w-[100%] relative">
+                    {images.map((imageSet, rowIndex) => (
+                        <div key={rowIndex} className={`absolute grid grid-cols-2 lg:grid-cols-4 gap-4 w-full h-full transition-opacity duration-1000 ${currentIndex === rowIndex ? 'opacity-100' : 'opacity-0'}`}>
+                            {imageSet.map((image, index) => (
+                                <div
+                                    key={index}
+                                    className="relative w-full h-[20vh] md:h-[40vh] lg:h-[40vh] xl:h-[45vh] transition-opacity duration-1000"
+                                >
+                                    <img
+                                        src={image}
+                                        alt={`image-${index}`}
+                                        className="w-full h-full object-cover"
+                                        loading='lazy'
+                                    />
+                                </div>
+                            ))}
                         </div>
                     ))}
                 </div>
 
                 <button
-                    className="prev absolute top-[50%] left-0 transform -translate-y-1/2 text-4xl text-white py-2 px-4 hidden md:block opacity-0 group-hover:opacity-90 transition-opacity duration-300"
-                    onClick={() => plusSlides(-1)}
+                    onClick={handlePrev}
+                    className="absolute top-[50%] left-[-3%] transform -translate-y-1/2 text-white text-4xl opacity-0 group-hover:opacity-90 transition-opacity duration-300 hidden md:block"
                 >
                     ❮
                 </button>
+
                 <button
-                    className="next absolute top-[50%] right-0 transform -translate-y-1/2 text-4xl text-white py-2 px-4 hidden md:block opacity-0 group-hover:opacity-90 transition-opacity duration-300"
-                    onClick={() => plusSlides(1)}
+                    onClick={handleNext}
+                    className="absolute top-[50%] right-[-3%] transform -translate-y-1/2 text-white text-4xl opacity-0 group-hover:opacity-90 transition-opacity duration-300 hidden md:block"
                 >
                     ❯
                 </button>
             </div>
-            <div className="flex justify-center mt-8">
-                {slides.map((_, index) => (
+
+            <div className="flex justify-center my-8 md:hidden">
+                {descriptions.map((_, index) => (
                     <span
                         key={index}
-                        className={`dot cursor-pointer w-2 h-2 mx-1 rounded-full ${slideIndex === index + 1 ? 'bg-amber-500' : 'bg-gray-300'}`}
-                        onClick={() => currentSlide(index + 1)}
+                        className={`dot cursor-pointer w-2 h-2 mx-1 rounded-full ${currentIndex === index ? 'bg-amber-500' : 'bg-gray-300'}`}
+                        onClick={() => currentSlide(index)}
                     ></span>
                 ))}
             </div>
 
-            <div ref={ref} className={`${isVisible ? 'animate-slide-up' : 'opacity-0'} transition-all mt-10 md:ps-8 lg:pe-[30rem] md:border-l-2 border-gray-700 w-full max-w-max`}>
-                <p className='text-gray-500'>
-                    We understand that everyone has different needs when it comes to living space. That's why we offer a variety of accommodation options to suit your style and budget. No matter which option you choose, you'll benefit from all the advantages of the Stayease living experience.
+            <div ref={ref} className={`${isVisible ? 'animate-slide-up' : 'opacity-0'} transition-all mt-[2rem] md:mt-[3rem] lg:mt-0 md:ps-8 xl:pe-[30rem] md:border-l-2 border-[#eba312] w-full max-w-max`}>
+                <p>
+                    Peek into the world of Stayease through our gallery! We invite you to envision yourself living in complete comfort, connection, and convenience. Here, you'll discover the spaces that make up our unique co-living experience.
                 </p>
             </div>
         </section>

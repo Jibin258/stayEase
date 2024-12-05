@@ -1,4 +1,5 @@
 import React, { useState, forwardRef } from 'react'
+import axios from 'axios'
 
 const EnquirySection = forwardRef((props, ref) => {
     let publicUrl = process.env.PUBLIC_URL + '/'
@@ -8,39 +9,44 @@ const EnquirySection = forwardRef((props, ref) => {
         phone: '',
         email: '',
         comments: ''
-    });
+    })
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
+        const { name, value } = e.target
         setFormData({
             ...formData,
             [name]: value
-        });
-    };
+        })
+    }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Form submitted:', formData);
+    const handleSubmit = async (e) => {
+        e.preventDefault()
 
         setFormData({
             name: '',
             phone: '',
             email: '',
             comments: ''
-        });
-    };
+        })
+
+        try {
+            const res = await axios.post('/normal-enquiry', formData);
+            alert(res.data);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
 
     return (
-        <section ref={ref} className='py-8 md:pt-[4.5rem] lg:px-24 mb-[35rem] md:mb-[2.5rem] lg:mb-[5rem]'>
-            <div className='text-center hidden lg:block mb-[3rem]'>
-                <span className='rounded-full px-4 py-1 bg-yellow-100 text-amber-500'>Let's Connect</span>
-                <h2 className="text-3xl font-bold mt-5">Send Us Your Enquiry</h2>
+        <section ref={ref} className='py-8 md:pt-[1rem] lg:px-24 mb-[30rem] md:mb-[2.5rem] lg:mb-[5rem]'>
+            <div className='text-center mb-[3rem]'>
+                <h1 className="text-2xl md:text-3xl font-semibold my-5">Send Us Your Enquiry</h1>
             </div>
 
             <div className='flex flex-col lg:flex-row lg:space-x-20'>
                 <div className='relative lg:h-[90vh] hidden lg:block'>
-                    <img src={publicUrl + "assets/img/connect-bg/connect_img.jpg"} alt="AboutUsImage" className='w-[95vw] h-[70] lg:h-[90vh] lg:w-[55vw]' />
-                    <div className='absolute top-[40%] left-[20%] text-center'>
+                    <img src={publicUrl + "assets/img/connect-bg/connect_img.webp"} alt="ConnectImage" className='w-[95vw] h-[70] lg:h-[90vh] lg:w-[55vw] opacity-75 object-cover' loading="lazy" />
+                    <div className='absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 text-center'>
                         <h2 className="text-4xl font-semibold text-white">Connect with StayEase</h2>
                         <p className='text-white mt-5'>Drop your concern, query or feedback</p>
                     </div>
@@ -48,11 +54,6 @@ const EnquirySection = forwardRef((props, ref) => {
 
                 <div className="relative md:w-[75vw] lg:w-[45vw] md:h-[85vh] lg:h-[90vh]">
                     <div className="absolute left-[5%] md:left-[16%] lg:left-[10%] lg:top-[13%] w-[90%] md:w-[100%] lg:w-[85%]">
-                        <div className='text-center lg:hidden'>
-                            <span className='rounded-full px-4 py-1 bg-yellow-100 text-amber-500'>Let's Connect</span>
-                            <h2 className="text-3xl font-semibold mt-5 mb-10">Send Us Your Enquiry</h2>
-                        </div>
-
                         <form onSubmit={handleSubmit} className='text-left mt-3'>
                             <div className="mb-3">
                                 <label className="block text-sm font-medium mb-2" htmlFor="name">
@@ -65,7 +66,7 @@ const EnquirySection = forwardRef((props, ref) => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    className="border rounded w-full py-2 px-3 bg-[#e8e8e8]"
+                                    className="border rounded w-full py-2 px-3 text-[#000000]"
                                 />
                             </div>
                             <div className="mb-3">
@@ -79,7 +80,7 @@ const EnquirySection = forwardRef((props, ref) => {
                                     value={formData.phone}
                                     onChange={handleChange}
                                     required
-                                    className="border rounded w-full py-2 px-3 bg-[#e8e8e8]"
+                                    className="border rounded w-full py-2 px-3 text-[#000000]"
                                 />
                             </div>
                             <div className="mb-5">
@@ -93,7 +94,7 @@ const EnquirySection = forwardRef((props, ref) => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="border rounded w-full py-2 px-3 bg-[#e8e8e8]"
+                                    className="border rounded w-full py-2 px-3 text-[#000000]"
                                 />
                             </div>
                             <div className="mb-5">
@@ -107,7 +108,7 @@ const EnquirySection = forwardRef((props, ref) => {
                                     rows="4" cols="50"
                                     value={formData.comments}
                                     onChange={handleChange}
-                                    className="border rounded w-full bg-[#e8e8e8]"
+                                    className="border rounded w-full p-2 text-[#000000]"
                                 />
                             </div>
                             <button

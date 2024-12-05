@@ -1,30 +1,51 @@
-import React from 'react'
+import React, { useEffect, useState } from "react"
 import { Link } from 'react-router-dom'
 
-const Banner = ({ scrollToEnquiry }) => {
+function Banner({ scrollToEnquiry }) {
     let publicUrl = process.env.PUBLIC_URL + '/'
 
+    const images = [
+        publicUrl + "assets/img/banner/banner_img1.webp",
+        publicUrl + "assets/img/banner/banner_img2.webp"
+    ]
+
+    const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
+        }, 5000)
+        return () => clearInterval(interval)
+    }, [images.length])
+
+
     return (
-        <section className='bg-[#f2f6f7] pt-10 lg:pt-20 lg:mb-[3rem]'>
-            <div className='flex flex-col lg:flex-row justify-around px-3 py-10 md:p-20 lg:p-24'>
-                <div className='my-10 lg:mt-[8rem]'>
-                    <h1 className="text-2xl md:text-4xl font-semibold animate-slide-up">EXPERIENCE CO-LIVING LIKE NEVER BEFORE!</h1>
-                    <div className='mt-8 ps-8 border-l-2 border-gray-700 w-full max-w-max animate-slide-up'>
-                        <p className='text-gray-500 w-9/12'>Experience a new way of living with a vibrant community and all-inclusive amenities designed for modern lifestyles.</p>
-                    </div>
+        <section className="relative h-[65vh] sm:h-[85vh] md:h-[100vh] mb-[3rem] md:mb-[3rem]">
+            <div className="relative w-full h-full overflow-hidden">
+                {images.map((image, index) => (
+                    <img
+                        key={index}
+                        src={image}
+                        alt={`Slide ${index + 1}`}
+                        className={`object-cover absolute inset-0 w-full h-full transition-opacity duration-1000 ${index === currentImageIndex ? "opacity-60" : "opacity-0"}`}
+                        loading="lazy"
+                    />
+                ))}
+            </div>
 
-                    <div className="mt-8 animate-slide-up">
-                        <button className="relative group border hover:border-black py-5 px-8 bg-amber-400 text-white transition-all duration-500 ease-in-out">
-                            <Link onClick={scrollToEnquiry} className="relative z-10 text-white text-center p-4 transition-all duration-500 ease-in-out group-hover:text-black">
-                                Make An Enquiry
-                            </Link>
-                            <div className="absolute inset-0 bg-white transform scale-x-0 origin-right transition-transform duration-500 ease-in-out group-hover:scale-x-100 z-0"></div>
-                        </button>
-                    </div>
-
+            <div className='absolute top-[65%] md:top-[58%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'>
+                <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold animate-slide-up whitespace-nowrap">EXPERIENCE CO-LIVING LIKE NEVER BEFORE!</h1>
+                <div className='mt-8 xl:whitespace-nowrap animate-slide-up'>
+                    <p className="md:text-xl">Experience a new way of living with a vibrant community and all-inclusive amenities designed for modern lifestyles.</p>
                 </div>
-                <div className="h-[53vh] md:h-[70vh]">
-                    <img src={publicUrl + "assets/img/banner/banner_img.jpg"} alt="#" className='w-[100%] h-[50vh] lg:w-[45vw] md:h-[70vh]' />
+
+                <div className="mt-8 animate-slide-up">
+                    <button className="relative group py-5 px-8 bg-[#eba312] text-white transition-all duration-500 ease-in-out">
+                        <Link onClick={scrollToEnquiry} className="relative z-10 text-white text-center p-4 transition-all duration-500 ease-in-out group-hover:text-black">
+                            Make An Enquiry
+                        </Link>
+                        <div className="absolute inset-0 bg-white transform scale-x-0 origin-right transition-transform duration-500 ease-in-out group-hover:scale-x-100 z-0"></div>
+                    </button>
                 </div>
             </div>
         </section>
