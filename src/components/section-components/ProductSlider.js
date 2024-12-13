@@ -33,13 +33,12 @@ const ProductSlider = ({ marginTop, heading, display }) => {
     const settings = {
         dots: true,
         customPaging: i => (
-            <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                i === Math.floor(activeSlide / slidesToScroll) ? "bg-[#eba312]" : "bg-white"
-              }`} />
+            <div className={`w-2 h-2 rounded-full transition-all duration-300 ${i === Math.floor(activeSlide / slidesToScroll) ? "bg-[#eba312]" : "bg-white"
+                }`} />
         ),
         afterChange: (current) => {
             setActiveSlide(current)
-          },
+        },
         infinite: true,
         speed: 500,
         slidesToShow: 3,
@@ -82,7 +81,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                                 <div className='overflow-hidden rounded-lg'>
                                     <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
                                         <img src={publicUrl + "assets/img/product/property-img1.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
-                                        <Link to="/stayease-harmonia" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button' onClick={() => window.scrollTo(0, 0)}>
+                                        <Link to="/stayease-harmonia" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                             BOOK NOW
                                         </Link>
                                     </div>
@@ -256,7 +255,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                     <div className='overflow-hidden rounded-lg'>
                         <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
                             <img src={publicUrl + "assets/img/product/property-img1.webp"} alt="Property1" className="w-full md:h-[45vh]" />
-                            <Link to="/stayease-harmonia" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button' onClick={() => window.scrollTo(0, 0)}>
+                            <Link to="/stayease-harmonia" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                 BOOK NOW
                             </Link>
                         </div>

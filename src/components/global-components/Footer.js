@@ -51,10 +51,10 @@ const Footer = () => {
                         <h4 className="text-2xl font-semibold md:font-bold">Company</h4>
                         <div className="mt-5">
                             <ul>
-                                <li className='mb-5'><Link className='font-base md:font-semibold hover:text-[#eba312]' to="/about" onClick={() => window.scrollTo(0, 0)}>About</Link></li>
-                                <li className='mb-5'><Link className='font-base md:font-semibold hover:text-[#eba312]' to="/properties" onClick={() => window.scrollTo(0, 0)}>Our Properties</Link></li>
-                                <li className='mb-5'><Link className='font-base md:font-semibold hover:text-[#eba312]' to="/blog" onClick={() => window.scrollTo(0, 0)}>Blog</Link></li>
-                                <li className='mb-5'><Link className='font-base md:font-semibold hover:text-[#eba312]' to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link></li>
+                                <li className='mb-5'><Link className='font-base md:font-semibold hover:text-[#eba312]' to="/about">About</Link></li>
+                                <li className='mb-5'><Link className='font-base md:font-semibold hover:text-[#eba312]' to="/properties">Our Properties</Link></li>
+                                <li className='mb-5'><Link className='font-base md:font-semibold hover:text-[#eba312]' to="/blog">Blog</Link></li>
+                                <li className='mb-5'><Link className='font-base md:font-semibold hover:text-[#eba312]' to="/contact">Contact</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -63,8 +63,8 @@ const Footer = () => {
                         <h4 className="text-2xl font-semibold md:font-bold">Services</h4>
                         <div className="mt-5">
                             <ul>
-                                <li className='mb-5'><Link className='font-base md:font-semibold hover:text-[#eba312]' to="/privacy-policy" onClick={() => window.scrollTo(0, 0)}>Privacy Policy</Link></li>
-                                <li className='mb-5'><Link className='font-base md:font-semibold hover:text-[#eba312]' to="/Terms-conditions" onClick={() => window.scrollTo(0, 0)}>Terms &amp; Conditions</Link></li>
+                                <li className='mb-5'><Link className='font-base md:font-semibold hover:text-[#eba312]' to="/privacy-policy">Privacy Policy</Link></li>
+                                <li className='mb-5'><Link className='font-base md:font-semibold hover:text-[#eba312]' to="/Terms-conditions">Terms &amp; Conditions</Link></li>
                                 <li className='mb-5'><Link className='font-base md:font-semibold hover:text-[#eba312]' to="/privacy-policy">Cookie Policy</Link></li>
                             </ul>
                         </div>

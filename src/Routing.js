@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom"
 import { Suspense, lazy } from 'react'
+import DefaultScrollToTop from './components/global-components/DefaultScrollToTop'
 
 const Home = lazy(() => import('./components/Home'))
 const MainAbout = lazy(() => import('./components/MainAbout'))
@@ -22,6 +23,7 @@ const LoadingSpinner = () => (
 function Routing() {
     return (
         <Suspense fallback={< LoadingSpinner />}>
+            < DefaultScrollToTop />
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route path="/about" element={<MainAbout />} />

@@ -29,7 +29,7 @@ function Blog1() {
 
                 <li className='pb-8'>
                     <h3 className='font-semibold'>2. Prime Locations at Affordable Prices</h3>
-                    <p>Bangalore’s Electronic City is a prime example of an area where coliving spaces thrive. Known as the IT hub of the city, Electronic City offers proximity to top multinational companies. Finding an individual apartment in such a coveted location could be expensive, but coliving spaces provide affordable accommodations, allowing millennials to live close to work without burning a hole in their pockets. <span className='font-semibold'>Hive Harmonia is the <Link to='/stayease-harmonia' target='_blank' onClick={() => window.scrollTo(0, 0)} className='underline text-[#125ce2]'>Best coliving spaces in Electronic City</Link> </span> offer all the perks of a prime location with the affordability that sharing accommodations provide.</p>
+                    <p>Bangalore’s Electronic City is a prime example of an area where coliving spaces thrive. Known as the IT hub of the city, Electronic City offers proximity to top multinational companies. Finding an individual apartment in such a coveted location could be expensive, but coliving spaces provide affordable accommodations, allowing millennials to live close to work without burning a hole in their pockets. <span className='font-semibold'>Hive Harmonia is the <Link to='/stayease-harmonia' target='_blank' className='underline text-[#125ce2]'>Best coliving spaces in Electronic City</Link> </span> offer all the perks of a prime location with the affordability that sharing accommodations provide.</p>
                 </li>
             </ul>
 
@@ -55,7 +55,7 @@ function Blog1() {
 
                 <li className='pb-8'>
                     <h3 className='font-semibold'>6. Convenience and Amenities</h3>
-                    <p>Coliving spaces are designed with convenience in mind. They typically offer shared amenities such as gyms, laundry facilities, communal kitchens, and entertainment areas. Some of the <Link to='/stayease-harmonia' target='_blank' onClick={() => window.scrollTo(0, 0)} className='underline text-[#125ce2]'>Best Coliving spaces in Electronic City</Link> even come with added perks like coworking areas, modular kitchen, and cafes. This combination of living and leisure creates an environment that suits the millennial lifestyle, blending work, play, and relaxation under one roof.</p>
+                    <p>Coliving spaces are designed with convenience in mind. They typically offer shared amenities such as gyms, laundry facilities, communal kitchens, and entertainment areas. Some of the <Link to='/stayease-harmonia' target='_blank' className='underline text-[#125ce2]'>Best Coliving spaces in Electronic City</Link> even come with added perks like coworking areas, modular kitchen, and cafes. This combination of living and leisure creates an environment that suits the millennial lifestyle, blending work, play, and relaxation under one roof.</p>
                 </li>
 
                 <li className='pb-8'>
@@ -74,7 +74,7 @@ function Blog1() {
                 </li>
 
                 <li className='pb-8'>
-                    If you're considering the <Link to='/' target='_blank' onClick={() => window.scrollTo(0, 0)} className='underline font-semibold'>Best Coliving Spaces in Bangalore</Link>, explore options that cater to your needs, budget, and lifestyle. Coliving is not just a trend—it's a sustainable and practical solution to modern living that aligns perfectly with millennial values.
+                    If you're considering the <Link to='/' target='_blank' className='underline font-semibold'>Best Coliving Spaces in Bangalore</Link>, explore options that cater to your needs, budget, and lifestyle. Coliving is not just a trend—it's a sustainable and practical solution to modern living that aligns perfectly with millennial values.
                 </li>
             </ul>
 

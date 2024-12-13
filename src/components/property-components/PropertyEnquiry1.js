@@ -166,7 +166,7 @@ const PropertyEnquiry1 = () => {
                                         src={slide.src}
                                         alt={slide.alt}
                                         className="w-full h-full object-cover"
-                                        loading="lazy"
+                                        loading="eager"
                                     />
 
                                     <div className="numbertext absolute top-0 left-0 text-white p-2 text-sm opacity-0 group-hover:opacity-90">
@@ -198,7 +198,7 @@ const PropertyEnquiry1 = () => {
                                     src={thumb.src}
                                     alt={thumb.alt}
                                     onClick={() => currentSlide(index + 1)}
-                                    loading="lazy"
+                                    loading="eager"
                                 />
                             </div>
                         ))}

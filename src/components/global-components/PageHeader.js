@@ -13,7 +13,7 @@ const PageHeader = (props) => {
                     src={publicUrl + "assets/img/bg/pageHeader.webp"}
                     alt={`bg_image`}
                     className={`object-cover absolute inset-0 w-full h-full object-cover opacity-50`}
-                    loading="lazy"
+                    loading="eager"
                 />
             </div>
             <div className="h-[18vh] md:h-[20vh]">

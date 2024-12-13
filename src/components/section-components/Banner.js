@@ -28,7 +28,7 @@ function Banner({ scrollToEnquiry }) {
                         src={image}
                         alt={`Slide ${index + 1}`}
                         className={`object-cover absolute inset-0 w-full h-full transition-opacity duration-1000 ${index === currentImageIndex ? "opacity-60" : "opacity-0"}`}
-                        loading="lazy"
+                        loading="eager"
                     />
                 ))}
             </div>

@@ -40,7 +40,7 @@ const About = ({ property, marginBottom }) => {
 
                         <div className={`mt-8 ${property ? property : ''}`}>
                             <button className="relative group py-5 px-8 bg-[#eba312] text-white transition-all duration-500 ease-in-out">
-                                <Link to="/about" className="relative z-10 text-white text-center p-4 transition-all duration-500 ease-in-out group-hover:text-black" onClick={() => window.scrollTo(0, 0)}>
+                                <Link to="/about" className="relative z-10 text-white text-center p-4 transition-all duration-500 ease-in-out group-hover:text-black">
                                     READ MORE
                                 </Link>
                                 <div className="absolute inset-0 bg-white transform scale-x-0 origin-right transition-transform duration-500 ease-in-out group-hover:scale-x-100 z-0"></div>

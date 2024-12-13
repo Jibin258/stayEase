@@ -16,7 +16,7 @@ const Blog = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-5 px-3 md:px-5 lg:px-8">
                 {images.map((src, imgIndex) => (
-                    <Link to='/blog/top-benefits-of-co-living-or-sharing-accommodation-for-millennials-in-bangalore' onClick={() => window.scrollTo(0, 0)} key={imgIndex}>
+                    <Link to='/blog/top-benefits-of-co-living-or-sharing-accommodation-for-millennials-in-bangalore' key={imgIndex}>
                         <img src={src} alt={`Image_${imgIndex + 1}`} className="w-full h-[35vh] mt-5 object-cover" loading="lazy" />
                         <div className='mb-10 px-1 pt-3'>
                             <p className='text-xs mb-3'>Sep 8</p>

@@ -68,9 +68,7 @@ export default function Navbar() {
                                         className={classNames(
                                             isActive ? 'text-[0.9rem] lg:text-[1rem] text-[#eba312]' : 'text-[0.9rem] lg:text-[1rem] text-white hover:text-[#eba312]',
                                             'rounded-md px-3 py-2 font-medium'
-                                        )}
-                                        onClick={() => window.scrollTo(0, 0)}
-                                    >
+                                        )}>
                                         {item.name}
                                     </Link>
                                 )
@@ -113,9 +111,7 @@ export default function Navbar() {
                                 className={classNames(
                                     isActive ? 'text-[1rem] bg-[#282b38] text-[#eba312]' : 'text-white hover:bg-[#282b38] hover:text-[#eba312]',
                                     'block rounded-md px-3 py-2 text-[1rem] font-medium'
-                                )}
-                                onClick={() => window.scrollTo(0, 0)}
-                            >
+                                )}>
                                 {item.name}
                             </Link>
                         )
