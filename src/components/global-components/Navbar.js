@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -17,6 +16,7 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false)
     const [isScrolledUp, setIsScrolledUp] = useState(true)
     const [lastScrollPosition, setLastScrollPosition] = useState(0)
     const location = useLocation()
@@ -40,8 +40,12 @@ export default function Navbar() {
         }
     }, [lastScrollPosition, handleScroll])
 
+    useEffect(() => {
+        setIsOpen(false)
+    }, [location.pathname])
+
     return (
-        <Disclosure as="nav" className={`bg-[#000000] border-b-2 border-[#eba312] shadow fixed w-full top-0 z-[100] transition-opacity duration-300 ${isScrolledUp ? 'opacity-100' : 'opacity-0'}`}>
+        <nav as="nav" className={`bg-[#000000] border-b-2 border-[#eba312] shadow fixed w-full top-0 z-[100] transition-opacity duration-300 ${isScrolledUp ? 'opacity-100' : 'opacity-0'}`}>
             <div className="h-24 p-2">
                 <div className="flex justify-around items-center">
                     {/* Logo */}
@@ -87,45 +91,70 @@ export default function Navbar() {
 
                     <div className="flex items-center md:hidden">
                         {/* Mobile menu button*/}
-                        <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 border-2 border-white text-white hover:bg-gray-600 hover:text-white focus:outline-none focus:ring-inset focus:ring-white">
-                            <span className="absolute -inset-0.5" />
-                            <span className="sr-only">Open main menu</span>
-                            <Bars3Icon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
-                            <XMarkIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
-                        </DisclosureButton>
+                        <button
+                            onClick={() => setIsOpen((prev) => !prev)}
+                            className="group relative inline-flex items-center justify-center rounded-md p-2 border-2 border-white text-white hover:bg-gray-600 focus:outline-none focus:ring-inset focus:ring-white"
+                        >
+                            {isOpen ? (
+                                <XMarkIcon aria-hidden="true" className="h-6 w-6" />
+                            ) : (
+                                <Bars3Icon aria-hidden="true" className="h-6 w-6" />
+                            )}
+                        </button>
                     </div>
                 </div>
             </div>
 
             {/* Mobile View */}
-            <DisclosurePanel className="md:hidden">
+            <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
+                {/* Navigation Links */}
                 <div className="space-y-1 px-2 pb-3 pt-2">
                     {navigation.map((item) => {
-                        const isActive = location.pathname === item.to
+                        const isActive = location.pathname === item.to;
 
                         return (
                             <Link
                                 key={item.name}
                                 to={item.to}
-                                aria-current={isActive ? 'page' : undefined}
-                                className={classNames(
-                                    isActive ? 'text-[1rem] bg-[#282b38] text-[#eba312]' : 'text-white hover:bg-[#282b38] hover:text-[#eba312]',
-                                    'block rounded-md px-3 py-2 text-[1rem] font-medium'
-                                )}>
+                                className={`${isActive
+                                    ? 'text-[1rem] bg-[#282b38] text-[#eba312]'
+                                    : 'text-white hover:bg-[#282b38] hover:text-[#eba312]'
+                                    } block rounded-md px-3 py-2 text-[1rem] font-medium`}
+                            >
                                 {item.name}
                             </Link>
-                        )
+                        );
                     })}
                 </div>
-                
-                <div className='md:hidden'>
-                    <div className="flex flex justify-left space-x-8 px-8 pb-5 pt-5">
-                        <div><Link to="https://www.facebook.com/stayeasee?mibextid=ZbWKwL" target='_blank' title="Facebook"><i className="text-2xl text-white hover:text-[#eba312] fab fa-facebook-f" /></Link></div>
-                        <div><Link to="https://www.instagram.com/stayease_/" target='_blank' title="Instagram"><i className="text-2xl text-white hover:text-[#eba312] fab fa-instagram" /></Link></div>
-                        <div><Link to="https://www.linkedin.com/company/stayease/" target='_blank' title="LinkedIn"><i className="text-2xl text-white hover:text-[#eba312] fab fa-linkedin" /></Link></div>
-                    </div>
+
+                {/* Social Media Links */}
+                <div className="flex justify-left space-x-8 px-8 pb-5 pt-5">
+                    <Link
+                        to="https://www.facebook.com/stayeasee?mibextid=ZbWKwL"
+                        target="_blank"
+                        className="text-2xl text-white hover:text-[#eba312]"
+                        title="Facebook"
+                    >
+                        <i className="fab fa-facebook-f" />
+                    </Link>
+                    <Link
+                        to="https://www.instagram.com/stayease_/"
+                        target="_blank"
+                        className="text-2xl text-white hover:text-[#eba312]"
+                        title="Instagram"
+                    >
+                        <i className="fab fa-instagram" />
+                    </Link>
+                    <Link
+                        to="https://www.linkedin.com/company/stayease/"
+                        target="_blank"
+                        className="text-2xl text-white hover:text-[#eba312]"
+                        title="LinkedIn"
+                    >
+                        <i className="fab fa-linkedin" />
+                    </Link>
                 </div>
-            </DisclosurePanel>
-        </Disclosure>
+            </div>
+        </nav>
     )
 }

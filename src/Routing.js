@@ -20,10 +20,10 @@ const LoadingSpinner = () => (
     </div>
 )
 
-function Routing() {
+function Routing() {    
     return (
         <Suspense fallback={< LoadingSpinner />}>
-            < DefaultScrollToTop />
+            <DefaultScrollToTop />
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route path="/about" element={<MainAbout />} />
