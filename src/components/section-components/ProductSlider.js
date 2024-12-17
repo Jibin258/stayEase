@@ -80,7 +80,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                             <div className="relative">
                                 <div className='overflow-hidden rounded-lg'>
                                     <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                                        <img src={publicUrl + "assets/img/product/property-img1.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                                        <img src={publicUrl + "assets/img/product/property-img1.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                                         <Link to="/stayease-harmonia" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                             BOOK NOW
                                         </Link>
@@ -100,7 +100,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                         <div className="relative">
                             <div className='overflow-hidden rounded-lg'>
                                 <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                                     <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                         BOOK NOW
                                     </Link>
@@ -119,7 +119,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                         <div className="relative">
                             <div className='overflow-hidden rounded-lg'>
                                 <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                                     <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                         BOOK NOW
                                     </Link>
@@ -138,7 +138,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                         <div className="relative">
                             <div className='overflow-hidden rounded-lg'>
                                 <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                                     <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                         BOOK NOW
                                     </Link>
@@ -157,7 +157,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                         <div className="relative">
                             <div className='overflow-hidden rounded-lg'>
                                 <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                                     <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                         BOOK NOW
                                     </Link>
@@ -176,7 +176,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                         <div className="relative">
                             <div className='overflow-hidden rounded-lg'>
                                 <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                                     <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                         BOOK NOW
                                     </Link>
@@ -195,7 +195,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                         <div className="relative">
                             <div className='overflow-hidden rounded-lg'>
                                 <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                                     <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                         BOOK NOW
                                     </Link>
@@ -214,7 +214,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                         <div className="relative">
                             <div className='overflow-hidden rounded-lg'>
                                 <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                                     <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                         BOOK NOW
                                     </Link>
@@ -233,7 +233,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                         <div className="relative">
                             <div className='overflow-hidden rounded-lg'>
                                 <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                                    <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                                     <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                         BOOK NOW
                                     </Link>
@@ -271,7 +271,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                 <div className="relative mb-5">
                     <div className='overflow-hidden rounded-lg'>
                         <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                             <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                 BOOK NOW
                             </Link>
@@ -288,7 +288,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                 <div className="relative mb-5">
                     <div className='overflow-hidden rounded-lg'>
                         <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                             <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                 BOOK NOW
                             </Link>
@@ -305,7 +305,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                 <div className="relative mb-5">
                     <div className='overflow-hidden rounded-lg'>
                         <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                             <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                 BOOK NOW
                             </Link>
@@ -322,7 +322,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                 <div className="relative mb-5">
                     <div className='overflow-hidden rounded-lg'>
                         <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                             <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                 BOOK NOW
                             </Link>
@@ -339,7 +339,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                 <div className="relative mb-5">
                     <div className='overflow-hidden rounded-lg'>
                         <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                             <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                 BOOK NOW
                             </Link>
@@ -356,7 +356,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                 <div className="relative mb-5">
                     <div className='overflow-hidden rounded-lg'>
                         <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                             <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                 BOOK NOW
                             </Link>
@@ -373,7 +373,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                 <div className="relative mb-5">
                     <div className='overflow-hidden rounded-lg'>
                         <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                             <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                 BOOK NOW
                             </Link>
@@ -390,7 +390,7 @@ const ProductSlider = ({ marginTop, heading, display }) => {
                 <div className="relative mb-5">
                     <div className='overflow-hidden rounded-lg'>
                         <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300'>
-                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[45vh] object-cover" loading="lazy" />
+                            <img src={publicUrl + "assets/img/product/property-img-sample.webp"} alt="Property1" className="w-full h-[40vh] h-[45vh] object-cover" loading="lazy" />
                             <Link to="" className='absolute top-8 right-5 bg-[#eba312] text-white px-3 py-1 text-sm' type='button'>
                                 BOOK NOW
                             </Link>
