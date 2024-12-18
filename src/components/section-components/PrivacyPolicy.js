@@ -13,7 +13,7 @@ function PrivacyPolicy() {
     }
 
     return (
-        <div className='pt-[8rem] md:pt-[10rem] pb-[1rem] md:pb-[2rem] px-[3rem] md:px-[5rem] lg:px-[8rem]'>
+        <div className='pt-[8rem] md:pt-[10rem] pb-[1rem] md:pb-[2rem] px-[1rem] md:px-[5rem] lg:px-[8rem]'>
             <div className='text-center mb-5'>
                 <h1 className="text-2xl md:text-4xl font-semibold my-3 md:my-5 text-[#eba312]">Privacy Policy</h1>
             </div>

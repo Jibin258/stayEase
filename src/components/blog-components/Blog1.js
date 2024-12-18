@@ -5,7 +5,7 @@ function Blog1() {
     let publicUrl = process.env.PUBLIC_URL + '/'
 
     return (
-        <div className='bg-white text-black px-[3rem] md:px-[8rem] pb-[3rem] pt-[8rem]'>
+        <div className='bg-white text-black px-[1rem] md:px-[8rem] pb-[3rem] pt-[8rem]'>
             <h1 className='text-xl md:text-3xl lg:text-5xl font-semibold my-3 md:my-5'>Top Benefits of Co-Living or Sharing Accommodation for Millennials in Bangalore</h1>
 
             <h6 className='font-semibold pt-[3rem]'>Rithan Gowda C</h6>
